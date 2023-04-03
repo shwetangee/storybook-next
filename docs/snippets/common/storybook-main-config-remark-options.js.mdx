@@ -1,0 +1,30 @@
+```js
+// .storybook/main.js
+
+import remarkGfm from 'remark-gfm';
+
+export default {
+  stories: ['../src/**/*.stories.@(js|ts)'],
+  addons: [
+    // Other addons go here
+    {
+      name: '@storybook/addon-docs',
+      options: {
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [remarkGfm],
+          },
+        },
+      },
+    },
+  ],
+  framework: {
+    // Replace your-framework with the name of your framework (e.g., react-webpack5, vue3-webpack5)
+    name: '@storybook/your-framework',
+    options: {},
+  },
+  docs: {
+    autodocs: 'tag',
+  },
+};
+```

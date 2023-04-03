@@ -1,0 +1,22 @@
+```js
+// .storybook/main.js
+
+export default {
+  stories: ['../src/**/*.stories.@(js|ts)'],
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
+  ],
+  framework: {
+    // Replace your-framework with the name of your framework (e.g., react-webpack5, vue3-webpack5)
+    name: '@storybook/your-framework',
+    options: {},
+  },
+  docs: {
+    //👇 See the table below for the list of supported options
+    autodocs: 'tag',
+    defaultName: 'Documentation',
+  },
+};
+```

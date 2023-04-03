@@ -1,0 +1,37 @@
+```js
+// MyComponent.stories.js
+
+import { html } from 'lit';
+
+export default {
+  title: 'MyComponent',
+  component: 'my-component',
+};
+
+const getCaptionForLocale = (locale) => {
+  switch (locale) {
+    case 'es':
+      return 'Hola!';
+    case 'fr':
+      return 'Bonjour!';
+    case 'kr':
+      return '안녕하세요!';
+    case 'zh':
+      return '你好!';
+    default:
+      return 'Hello!';
+  }
+};
+
+/*
+ *👇 Render functions are a framework specific feature to allow you control on how the component renders.
+ * See https://storybook.js.org/docs/7.0/web-components/api/csf
+ * to learn how to use render functions.
+ */
+export const StoryWithLocale = {
+  render: (args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return html`<p>${caption}</p>`;
+  },
+};
+```
